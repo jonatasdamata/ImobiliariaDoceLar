@@ -35,8 +35,6 @@ public class ImobiliariaController {
         }
         //Retorna a lista de selectOption criamos na variável de retorno
         return optionsToReturn;
-        
-        
     }
     
     
@@ -55,12 +53,8 @@ public class ImobiliariaController {
         objImoveis.Valor__c = valor;
         objImoveis.TipoImovel__c = tipoImovel;
         
-        
-        
         try{
-            
             if(objImoveis.TipoImovel__c != 'Nenhum' && objImoveis.TipoImovel__c != null){
-                
                 ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.CONFIRM, 'Imóvel cadastrado com sucesso!!'));
                 insert objImoveis;
                 
@@ -74,23 +68,11 @@ public class ImobiliariaController {
                 vagas = null;
                 valor = null;
                 tipoImovel = null;
-                
-                
             }else{
                 ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR, 'O campo tipo de imóvel deverá ser preenchido!'));
             }
-            
         }catch(DmlException e){
             ApexPages.addMessage(new ApexPages.message(ApexPages.Severity.ERROR, 'Por favor, verifique todos os campos antes de salvar.'));
-            
-            
         }
-        
-        
-        
-        
-        
-        
-        
     }
 }
